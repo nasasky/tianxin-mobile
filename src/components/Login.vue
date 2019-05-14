@@ -63,9 +63,13 @@ export default {
       })
     },
     handleLogin() {
-      if(!this.username || !this.password) {
-        this.$toast.fail('用户名或是密码不能为空')
+      if(!this.username) {
+        this.$toast.fail('用户名不能为空')
         return
+      }
+      if(!this.password){
+        this.$toast.fail('密码不能为空')
+
       }
 
       
