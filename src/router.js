@@ -1,26 +1,51 @@
-import Vue from "vue";
-import Router from "vue-router";
-import Home from "./views/Home.vue";
+import Vue from 'vue'
+import Router from 'vue-router'
 
-Vue.use(Router);
+Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
+  base: process.env.BASE_URL,
   routes: [
     {
-      path: "/",
-      name: "home",
-      component: Home
+      path: '/',
+      redirect: '/login'
     },
     {
-      path: "/",
-      name: "Contant",
-      component: () => import("./views/contant")
+      path: '/login',
+      name: 'login',
+      component: () => import('./views/login')
     },
     {
-      path: "/about",
-      name: "about",
-
-      component: () => import("./views/About.vue")
+      path: '/home',
+      name: 'home',
+      component: () => import('./views/home'),
+      children: [
+        {
+          path: '/home',
+          redirect: '/home/substitute'
+        },
+        {
+          path: '/home/mine',
+          name: 'mine',
+          component: () => import('./views/mine')
+        },
+        {
+          path: '/home/publish',
+          name: 'publish',
+          component: () => import('./views/publish')
+        },
+        {
+          path: '/home/substitute',
+          name: 'substitute',
+          component: () => import('./views/substitute')
+        },
+        {
+          path: '/home/course',
+          name: 'course',
+          component: () => import('./views/course')
+        }
+      ]
     }
   ]
-});
+})
