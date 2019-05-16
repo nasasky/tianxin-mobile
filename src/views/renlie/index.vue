@@ -3,7 +3,7 @@
     <van-row class="m-header">
             <van-col span="24">
                 <van-icon name="arrow-left" class="m-header-icon"  @click="prevv()" />
-　　　　　　　　　　<div class="head">寺庙列表</div>
+　　　　　　　　　　<div class="head">僧人列表</div>
 　　　　　　  </van-col>
         </van-row>
     
@@ -14,12 +14,12 @@
         </div>
 
         <div></div>
-        寺庙名称: {{course.title}}
+        所属寺庙: {{course.title}}
 
          <div class="desc" slot="desc">
         时间： {{course.create_time}}
         <br>
-        发布人： {{course.user_name}}
+        姓名： {{course.user_name}}
         <br>
       </div>
       </div>

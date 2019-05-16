@@ -1,34 +1,53 @@
 <template>
-<div class="login-container">
-    <img src="../../assets/logo.png" alt="" class="logo">
+ <div class="hello">
+        <van-row class="m-header">
+            <van-col span="24">
+                <van-icon name="arrow-left" class="m-header-icon"  @click="prevx()" />
+　　　　　　　　　　<div class="head">发布资讯</div>
+　　　　　　  </van-col>
+        </van-row>
+      
 
-    <van-cell-group>
-      <van-field v-model="username" placeholder="请输入账号" label-align="left" label="账号" clearable required></van-field>
-      <van-field v-model="password" placeholder="请输入密码" label-align="left" label="密码" clearable required type="password"></van-field>
-      <van-field v-show="!isLogin" v-model="repassword" placeholder="请再次输入密码" label-align="left" label="重复密码" clearable required type="password"></van-field>
+      <van-cell-group>
+      <van-field v-model="username" placeholder="请输入资讯标题" label-align="left" label="标题：" clearable required></van-field>
+      
+      <van-field class="tess" v-model="message"  type="textarea" placeholder="请输入详细内容"  rows="1" autosize style="height:200px;" />
     </van-cell-group>
 
+
+
+
+
     <van-row class="box">
-      <!-- <van-button size="small" @click="handleRegister">
-        {{ isLogin ? '注册' : '已有账号'}}
-      </van-button> -->
+    
       <van-button type="primary" size="small" class="login-btn" @click="handleLogin">
-        {{isLogin ? '登录' : '注册并且登录'}}
+        {{isLogin ? '提交' : ''}}
       </van-button>
     </van-row>
-</div>
+    
+
+  </div>
+  
 </template>
 <script>
 export default {
   data() {
     return {
-     username: 'admin',
-      password: '123456',
-      repassword: '',
+     username: '',
+      password: '',
+      juti:'',
+      message:'',
+      
       isLogin: true
     }
   },
+
+
   methods: {
+    
+     prevx () {
+      this.$router.go(-1)
+    },
     
     showLoginTip() {
       const toast = this.$toast.loading({
@@ -41,7 +60,8 @@ export default {
     login() {
       this.$http.login({
         username: this.username,
-        password: this.password
+        password: this.password,
+        juti:this.juti
       }).then(response => {
         console.log('登录成功返回', response)
         console.log('返回code',response.code)
@@ -61,43 +81,46 @@ export default {
     },
     handleLogin() {
       if(!this.username) {
-        this.$toast.fail('用户名不能为空')
+        this.$toast.fail('寺庙名称不能为空')
         return
       }
       if(!this.password){
-        this.$toast.fail('密码不能为空')
+        this.$toast.fail('负责人不能为空')
          return
       }
 
       if(this.isLogin) {
         this.showLoginTip()
         this.login()
-      } else {
-        console.log("注册用户")
-        if(this.password != this.repassword) {
-          this.$toast.fail('两次输入密码不一致')
-          return
-        }
-
-        this.$http.register({
-          username: this.username,
-          password: this.password
-        }).then(res => {
-          console.log('注册成功返回', res.data)
-          this.$toast.clear()
-          // this.$store.dispath('setUser', res.data)
-          this.$router.push({
-            path: '/home'
-          })
-        }).catch(err => {
-          this.$toast.fail(err)
-        })
       }
-    }
+    },
+
 
   }
 }
 </script>
+<style scoped>
+    .m-header {
+        height: 40px;
+        line-height: 40px;
+        background: #0082FE;
+        color: #fff;
+    }
+    
+    .m-header-icon {
+        position: absolute;
+        top: 11px;
+        left: 6px;
+        font-size: 18px;
+    }
+    .head{
+      text-align: center;
+       font-size: 14px;
+    }
+    textarea{
+      height: 200px !important;
+    }
+</style>
 <style lang="scss" scoped>
 .login-container {
   display: flex;
@@ -131,5 +154,17 @@ export default {
     color: #fff;
     background-color: #0082FE;
     border: 1px solid #0082FE;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 20px;
+
+}
+.van-button--primary[data-v-08841328] {
+    color: #fff;
+    background-color: #0082FE;
+    border: 1px solid #0082FE;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 20px;
 }
 </style>

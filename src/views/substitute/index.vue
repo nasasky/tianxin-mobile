@@ -1,6 +1,5 @@
 <template>
 <div class="ban"> 
-
 <van-row>
   <van-col span="24">
     <div class="admin">
@@ -15,42 +14,66 @@
 
 
 <van-row gutter="20" style="margin-top:20px;">
+  <router-link :to="{name:'publish',params:{id:'1'}}">
   <van-col span="6">
     <van-icon  name="shop-o" />
-    <h6>新增寺庙</h6>
+     <h6>新增寺庙</h6>
   </van-col>
+  </router-link>
+
+  <router-link :to="{name:'sengren',params:{}}">
   <van-col span="6">
       <van-icon name="user-o"/>
       <h6>新增僧人</h6>
   </van-col>
+  </router-link>
+ 
+ <router-link :to="{name:'fabunews',params:{}}">
   <van-col span="6">
       <van-icon name="edit"/>
       <h6>发布资讯</h6>
   </van-col>
+  </router-link>
+
+  <router-link :to="{name:'fabushangpin',params:{}}">
    <van-col span="6">
        <van-icon name="balance-pay"/>
        <h6>发布商品</h6>
    </van-col>
+  </router-link>
+   
 </van-row>
 
 
 <van-row gutter="20" style="margin-top:20px;">
-  <van-col span="6">
+  <router-link :to="{name:'course',params:{}}">
+ <van-col span="6">
     <van-icon  name="hotel-o" />
     <h6>寺庙列表</h6>
   </van-col>
-  <van-col span="6">
+  </router-link>
+ 
+ <router-link :to="{name:'renlie',params:{}}">
+ <van-col span="6">
       <van-icon name="user-circle-o"/>
       <h6>僧人列表</h6>
   </van-col>
-  <van-col span="6">
+ </router-link>
+ 
+ <router-link :to="{name:'newslie',params:{}}">
+<van-col span="6">
       <van-icon name="notes-o"/>
       <h6>资讯列表</h6>
   </van-col>
-   <van-col span="6">
+ </router-link>
+  
+  <router-link :to="{name:'shanglie',params:{}}">
+ <van-col span="6">
        <van-icon name="bag-o"/>
        <h6>商品列表</h6>
    </van-col>
+  </router-link>
+  
 </van-row>
 
 
@@ -136,5 +159,8 @@ text-align: center;
 .van-col--6 {
    
     text-align: center;
+}
+.van-col--6 h6{
+  color: black;
 }
 </style>

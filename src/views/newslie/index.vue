@@ -3,7 +3,7 @@
     <van-row class="m-header">
             <van-col span="24">
                 <van-icon name="arrow-left" class="m-header-icon"  @click="prevv()" />
-　　　　　　　　　　<div class="head">寺庙列表</div>
+　　　　　　　　　　<div class="head">资讯列表</div>
 　　　　　　  </van-col>
         </van-row>
     
@@ -14,7 +14,7 @@
         </div>
 
         <div></div>
-        寺庙名称: {{course.title}}
+        标题: {{course.title}}
 
          <div class="desc" slot="desc">
         时间： {{course.create_time}}
@@ -93,13 +93,13 @@ export default {
   float: left;
   width: 80px;
   height: 80px;
-  border-radius: 80px;
+ 
   margin-right: 10px;
 }
 .pic img {
   float: left;
   width: 100%;
   height: 100%;
-  border-radius: 100%;
+  
 }
 </style>
