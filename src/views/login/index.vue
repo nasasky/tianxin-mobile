@@ -13,7 +13,7 @@
         {{ isLogin ? '注册' : '已有账号'}}
       </van-button> -->
       <van-button type="primary" size="small" class="login-btn" @click="handleLogin">
-        {{isLogin ? '登录' : '注册并且登录'}}
+        {{isLogin ? '登&nbsp;录' : '注册并且登录'}}
       </van-button>
     </van-row>
 </div>
@@ -48,7 +48,7 @@ export default {
         if(response.code == 1) {
 
             this.$router.push({
-                path: '/substitute'
+                path: '/shouquan'
             })
           // this.$store.dispatch('setUser', )
         }
@@ -131,5 +131,17 @@ export default {
     color: #fff;
     background-color: #0082FE;
     border: 1px solid #0082FE;
+}
+.van-button--small {
+    padding: 0 8px;
+    height: 40px;
+    min-width: 60px;
+    font-size: 12px;
+    line-height: 28px;
+}
+.van-button--small{
+   
+    font-size: 14px;
+    line-height: 28px;
 }
 </style>

@@ -5,7 +5,7 @@
                 <van-icon name="arrow-left" class="m-header-icon"  @click="prevv()" />
 　　　　　　　　　　<div class="head">资讯列表</div>
 　　　　　　  </van-col>
-        </van-row>
+    </van-row>
     
     <van-card v-for="course in courses" :key="course.id" :thumb="course.publisherHeader">
       <div class="title" slot="title">

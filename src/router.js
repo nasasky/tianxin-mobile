@@ -62,7 +62,13 @@ export default new Router({
       name:'shanglie',
       component:() => import('./views/shanglie')
 
+    },
+    {
+      path:'/shouquan',
+      name:'shouquan',
+      component:() => import('./views/shouquan')
     }
+
     
   ]
 })
