@@ -45,6 +45,9 @@
   </div>
 </template>
 <script>
+
+
+
 export default {
   data() {
     return {
@@ -53,6 +56,10 @@ export default {
       juti: "",
       isLogin: true
     };
+  },
+
+   components: {
+   
   },
    created() {
       console.log(this.$route.params.id);

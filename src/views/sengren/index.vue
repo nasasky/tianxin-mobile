@@ -8,14 +8,9 @@
         </van-row>
       
 
-      <van-cell-group>
-      <van-field v-model="username" placeholder="请输入僧人姓名" label-align="left" label="姓名：" clearable required></van-field>
-      <van-field v-model="password" placeholder="请输入僧人联系电话" label-align="left" label="联系电话：" clearable required ></van-field>
-       <van-field v-model="juti" placeholder="请输入僧人所属寺庙名称" label-align="left" label="所属寺庙：" clearable required ></van-field>
-    </van-cell-group>
+     
 
     <van-row class="box">
-    
       <van-button type="primary" size="small" class="login-btn" @click="handleLogin">
         {{isLogin ? '提交' : ''}}
       </van-button>
