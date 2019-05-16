@@ -5,7 +5,7 @@
     <div class="admin">
       <div class="touxiang">
          <van-icon  name="manager" />
-          <h6>Admin</h6>
+          <h6>寺庙管理员</h6>
       </div>
     </div>
   </van-col>
@@ -131,7 +131,7 @@
  font-size: 50px;
 }
 .touxiang h6{
-  font-size: 22px;
+  font-size: 16px;
   color: white;
   margin-top: 10px;
 }
