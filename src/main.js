@@ -14,12 +14,6 @@ import 'vant/lib/index.css'
 Vue.use(Vant)
 
 
-import Mint from 'mint-ui';
-Vue.use(Mint);
-import 'mint-ui/lib/style.css';
-import {Picker} from 'mint-ui';
-Vue.component(Picker.name, Picker);
-
 
 
 new Vue({
